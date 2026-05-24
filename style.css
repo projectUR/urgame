@@ -1,1 +1,33 @@
+:root {
+    --bg-color: #0f172a;
+    --panel-bg: #1e293b;
+    --panel-border: #334155;
+    --text-color: #f8fafc;
+    --accent-primary: #3b82f6;
+    --accent-success: #10b981;
+    --accent-danger: #ef4444;
+    --accent-warning: #f59e0b;
+}
 
+body { background-color: var(--bg-color); color: var(--text-color); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+
+/* Harita ve SVG */
+#map-container { flex: 7; background: #94a3b8; display: flex; justify-content: center; align-items: center; padding: 20px; }
+.map-svg { width: 100%; height: 100%; object-fit: contain; }
+#map-container svg path { stroke: #1e293b !important; stroke-width: 1.5px !important; cursor: pointer; transition: 0.3s; }
+#map-container svg path:hover { filter: brightness(0.8) contrast(1.2); }
+
+.owner-player { fill: #2563eb !important; }
+.owner-enemy { fill: #dc2626 !important; }
+.selected-region { stroke: #ffffff !important; stroke-width: 4px !important; filter: brightness(1.4); }
+
+/* Panel ve Diğer Tasarımlar */
+header { background: var(--panel-bg); padding: 15px 30px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--panel-border); }
+.panel-section { flex: 3; background: var(--panel-bg); padding: 25px; display: flex; flex-direction: column; gap: 20px; }
+.action-btn { width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; }
+.btn-train { background: var(--accent-primary); color: white; }
+.btn-attack { background: var(--accent-danger); color: white; }
+.btn-stabilize { background: var(--accent-success); color: white; }
+#battle-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.9); z-index: 200; justify-content: center; align-items: center; }
+.battle-container { background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 30px; text-align: center; border-radius: 10px; }
+.dice { width: 60px; height: 60px; background: white; color: black; display: inline-flex; justify-content: center; align-items: center; font-size: 2rem; margin: 10px; border-radius: 8px; }
